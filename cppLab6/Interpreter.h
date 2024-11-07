@@ -20,7 +20,6 @@ public:
 	int position = 0;
 	const std::string ETX = "\u0003";
 	std::map<std::string, int> symbolTable;
-	int result = 0;
 
 	void parse_stmt(const std::vector<std::string>& tokens);
 	void parse_configstmt(const std::vector<std::string>& tokens);

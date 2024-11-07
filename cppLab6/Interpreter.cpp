@@ -114,6 +114,7 @@ void Interpreter::parse_configstmt(const std::vector<std::string>& tokens)
 
 void Interpreter::parse_printstmt(const std::vector<std::string>& tokens)
 {
+	int result = 0;
 	std::string next_token = peek();
 	std::regex Int("-?[0-9]+");
 	std::regex variable("[a-zA-Z][a-zA-Z0-9]*");
@@ -138,6 +139,7 @@ void Interpreter::parse_printstmt(const std::vector<std::string>& tokens)
 
 void Interpreter::parse_assgstmt(const std::vector<std::string>& tokens)
 {
+	int result = 0;
 	std::string next_token = peek();
 	std::string variableToken = peekP();
 
@@ -163,6 +165,7 @@ int Interpreter::parse_MathExp(const std::vector<std::string>& tokens)
 
 int Interpreter::parse_SumExp(const std::vector<std::string>& tokens)
 {
+	int result = 0;
 	result = parse_ProductExp(tokens);
 	std::string next_token = peek();
 
@@ -191,6 +194,7 @@ int Interpreter::parse_SumExp(const std::vector<std::string>& tokens)
 
 int Interpreter::parse_ProductExp(const std::vector<std::string>& tokens)
 {
+	int result = 0;
 	result = parse_PrimaryExp(tokens);
 	std::string next_token = peek();
 
@@ -218,6 +222,7 @@ int Interpreter::parse_ProductExp(const std::vector<std::string>& tokens)
 
 int Interpreter::parse_PrimaryExp(const std::vector<std::string>& tokens)
 {
+	int result = 0;
 	std::string next_token = peek();
 	std::regex variable("[a-zA-Z][a-zA-Z0-9]*");
 	std::regex Int(("-?[0-9]+"));
